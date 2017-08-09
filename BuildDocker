@@ -1,0 +1,45 @@
+#!/bin/bash
+#
+# Copyright (c) 2017 by Matthew Jacob
+# All rights reserved.
+#
+#  This program is free software; you can redistribute it and/or modify
+#  it under the terms of The version 2 GNU General Public License as
+#  published by the Free Software Foundation.
+#
+#  This program is distributed in the hope that it will be useful,
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#  GNU General Public License for more details.
+#
+#  You should have received a copy of the GNU General Public License
+#  along with this program; if not, write to the Free Software
+#  Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#
+#
+# Matthew Jacob
+# Feral Software
+# 253 Lowell Street
+# Redwood City, CA 94062
+# USA
+#
+# gpl at feral com
+#
+
+set -o errexit
+
+mkdir -p RPMS
+#
+# CentOS
+#
+for REL in 6 7; do
+ docker build -t c${REL}build -f Dockerfile.centos${REL} $(pwd)
+ docker run --name built-c${REL} c${REL}build
+ ctid=$(docker ps -a|awk -v M=built-c${REL} ' { if ($NF == M) print $1 }')
+ docker cp ${ctid}:/build/pkg/RPMS/x86_64 .
+ mv x86_64/*.rpm RPMS
+ rm -rf x86_64
+ docker rm $ctid
+ imid=$(docker images|awk -v M=c${REL}build ' { if ($1 == M) print $3 }')
+ docker rmi $imid
+done
