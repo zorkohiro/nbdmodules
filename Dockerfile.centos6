@@ -1,0 +1,32 @@
+#
+# Copyright (c) 2017 by Matthew Jacob
+# All rights reserved.
+#
+#  This program is free software; you can redistribute it and/or modify
+#  it under the terms of The version 2 GNU General Public License as
+#  published by the Free Software Foundation.
+#
+#  This program is distributed in the hope that it will be useful,
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#  GNU General Public License for more details.
+#
+#  You should have received a copy of the GNU General Public License
+#  along with this program; if not, write to the Free Software
+#  Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#
+#
+# Matthew Jacob
+# Feral Software
+# 253 Lowell Street
+# Redwood City, CA 94062
+# USA
+#
+# gpl at feral com
+#
+FROM centos:6.9
+WORKDIR /build
+COPY . /build
+RUN yum update -y ; yum clean all
+RUN yum groupinstall -y "Development Tools"
+CMD [ "./BuildAll", "2.6.32" ]
