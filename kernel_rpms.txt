@@ -81,6 +81,7 @@ http://mirror.centos.org/centos/6.9/updates/x86_64/Packages/kernel-devel-2.6.32-
 http://mirror.centos.org/centos/6.9/updates/x86_64/Packages/kernel-devel-2.6.32-696.3.1.el6.x86_64.rpm
 http://mirror.centos.org/centos/6.9/updates/x86_64/Packages/kernel-devel-2.6.32-696.3.2.el6.x86_64.rpm
 http://mirror.centos.org/centos/6.9/updates/x86_64/Packages/kernel-devel-2.6.32-696.6.3.el6.x86_64.rpm
+http://mirror.centos.org/centos/6.9/updates/x86_64/Packages/kernel-devel-2.6.32-696.10.1.el6.x86_64.rpm
 http://vault.centos.org/7.0.1406/os/x86_64/Packages/kernel-devel-3.10.0-123.el7.x86_64.rpm
 http://vault.centos.org/7.0.1406/updates/x86_64/Packages/kernel-devel-3.10.0-123.1.2.el7.x86_64.rpm
 http://vault.centos.org/7.0.1406/updates/x86_64/Packages/kernel-devel-3.10.0-123.4.2.el7.x86_64.rpm
