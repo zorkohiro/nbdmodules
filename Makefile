@@ -1,4 +1,4 @@
-# Copyright (c) 2017 by Matthew Jacob
+# Copyright (c) 2017, 2021 by Matthew Jacob
 # All rights reserved.
 #
 #  This program is free software; you can redistribute it and/or modify
@@ -21,7 +21,7 @@
 # Redwood City, CA 94062
 # USA
 #
-# gpl at feral com
+# gpl at feralsw com
 #
 # The default build is for the top of tree for the linux kernel.
 # We keep that locally around here in a specific place.
